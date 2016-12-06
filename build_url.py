@@ -1,6 +1,6 @@
 #-*-coding:utf-8 -*-
 import urllib,sys
-f
+
 class BuildUrl(object):
     def __init__(self):
         pass

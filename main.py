@@ -4,8 +4,9 @@ from PPP_project import cat_main,data_main
 def CatThread():
     CAT=cat_main.CatMain()
     CAT.cat_main()
+
 def DataThread():
-    time.sleep(2)       #为了保证在url中有url
+    time.sleep(10)       #为了保证在url中有url
     DATA=data_main.DataMain()
     DATA.data_main()
 
