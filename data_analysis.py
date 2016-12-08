@@ -15,7 +15,8 @@ class DataAnalysis(object):
         contentF = 0  # 用于判断当前获取的为何种信息
         otherFLAG = 0  # 标记其余信息量的多少
 
-        content = []
+        content = []    #用于存储信息
+
         for i in range(0, 16):
             content.append(0)
 

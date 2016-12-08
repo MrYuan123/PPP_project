@@ -1,5 +1,10 @@
 #-*-coding:utf-8 -*-
 from PPP_project import data_store,build_url,download_data,data_analysis
+
+import csv,sys
+reload(sys)
+sys.setdefaultencoding('utf8')
+
 import threading,time
 lock = threading.Lock()
 
@@ -12,9 +17,9 @@ class DataMain(object):
         print 'Enter data thread!'
         URLF=open("url_lists.md","r")
         url_lists =  URLF.readlines()
-
+        wrong_url=0
         for now_url in url_lists:
-
+            print "Handle with the url:%s\n"%now_url
             with open("data_page_flag.md","w") as flagF:    #记录url运行的位置
                     flagF.write(now_url)
 
@@ -25,6 +30,7 @@ class DataMain(object):
                     ES.write(str(now_url))
                     ES.write("\n")
             else:
+                print "Download success!\n"
                 if self.Dana.data_analysis(data_page)== None:    #判断是否数据处理成功的依据
                     print "Data analysis error!"
                     with open("error_data.md","a") as ES:

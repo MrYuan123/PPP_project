@@ -4,7 +4,7 @@ import urllib2
 class DownData(object):
     def __init__(self):
         pass
-    def download_data(now_url):
+    def download_data(self,now_url):
         try:
             request = urllib2.Request(now_url)
             response = urllib2.urlopen(request, timeout=30)
